@@ -2,9 +2,9 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-from djangoProject.cipher_pool.general_encryptor_pool import general_cipher_pool
-from djangoProject.model.models import EncryptionData
-from djangoProject.salt_pool.general_salt_pool import general_salt_pool
+from djangoCaaS.cipher_pool.general_encryptor_pool import general_cipher_pool
+from djangoCaaS.model.models import EncryptionData
+from djangoCaaS.salt_pool.general_salt_pool import general_salt_pool
 
 
 def hello_world(request):
