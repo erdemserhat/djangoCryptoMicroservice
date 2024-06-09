@@ -18,16 +18,17 @@ def encrypt(request):
         json_data = request.body
         # JSON verisi
 
-
         # JSON verisini bir sözlüğe dönüştürme
         data_dict = json.loads(json_data)
 
         # Sözlüğü kullanarak sınıf nesnesi oluşturma
-        my_object = EncryptionData(data_dict["apiKey"],data_dict["userUUID"],data_dict["sensitiveData"])
+        my_object = EncryptionData(data_dict["apiKey"], data_dict["userUUID"], data_dict["sensitiveData"])
 
-        print(general_cipher_pool[7]("dsf ds"))
+        #
 
-        #validate API KEY
+        print(general_cipher_pool[3](my_object.sensitiveData))
+
+        # validate API KEY
 
         return HttpResponse("POST request alındı ve işlendi.")
     else:

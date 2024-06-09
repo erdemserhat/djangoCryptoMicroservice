@@ -2,4 +2,4 @@ from djangoProject.salt_pool.salts.salt_pool_length12_versions import salt_pool_
 from djangoProject.salt_pool.salts.salt_pool_length16_versions import salt_pool_length16
 from djangoProject.salt_pool.salts.salt_pool_length8_versions import salt_pool_length8
 
-general_salt_pool = salt_pool_length8 + salt_pool_length12 +salt_pool_length16
+general_salt_pool = salt_pool_length8 + salt_pool_length12 + salt_pool_length16
