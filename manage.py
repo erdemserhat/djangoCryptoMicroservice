@@ -6,6 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    #python manage.py runserver
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoCaaS.settings')
     try:
         from django.core.management import execute_from_command_line
@@ -20,3 +21,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+3
