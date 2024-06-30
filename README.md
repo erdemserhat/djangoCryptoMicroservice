@@ -3,6 +3,12 @@
 ## Project Overview
 This project aims to provide a more secure and effortless approach to encrypting user data compared to traditional methods. Encryption operations are carried out on a separate server, independent of the main server, and unique encryption configurations are created for each user.
 
+## Presentation Video
+
+https://github.com/erdemserhat/djangoCryptoMicroservice/assets/116950260/452801ed-40e6-44d2-82c1-787e2ed32a76
+
+
+
 ## Features
 - **Independent Encryption Server**: Encryption operations are performed on a server independent of the main server.
 - **Unique Encryption**: Different salt and encryption algorithms are used for each user.
