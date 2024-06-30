@@ -51,9 +51,9 @@ This endpoint handles encryption requests by processing sensitive data, user UUI
 **Example Request:**
 ```json
 {
-  "apiKey": "your_api_key",
-  "userUUID": "123e4567-e89b-12d3-a456-426614174000",
-  "sensitiveData": "this is some sensitive data"
+    "apiKey": "example_api_key",
+    "userUUID": "4dbcbcfe-4800-40a8-badf-c26b73af230c",
+    "sensitiveData": "example sensitive data"
 }
 ```
 
