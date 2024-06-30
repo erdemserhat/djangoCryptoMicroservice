@@ -1,4 +1,4 @@
-# Secure Encryption System
+# CaaS ( Crypto as a Service )
 
 ## Project Overview
 This project aims to provide a more secure and effortless approach to encrypting user data compared to traditional methods. Encryption operations are carried out on a separate server, independent of the main server, and unique encryption configurations are created for each user.
