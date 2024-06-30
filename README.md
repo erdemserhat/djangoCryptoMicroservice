@@ -30,9 +30,12 @@ https://github.com/erdemserhat/djangoCryptoMicroservice/assets/116950260/452801e
 - **Security**: Communication between the main server and the encryption server is secured using secure protocols. The independent encryption server adds an extra layer of security against attacks.
 - **Performance**: The performance of the encryption server can affect the overall speed and efficiency of the system. Therefore, it is crucial to ensure that the encryption server has sufficient performance and scalability.
 
-## Endpoints
 
-### `/encrypt`
+
+
+📡 API Endpoints
+
+### 📌 `/encrypt`
 
 **Method:** `POST`
 
