@@ -49,11 +49,12 @@ This endpoint handles encryption requests by processing sensitive data, user UUI
   "userUUID": "123e4567-e89b-12d3-a456-426614174000",
   "sensitiveData": "this is some sensitive data"
 }
-
+```
 
 **Example Respond:**
+```json
 
 {
     "encrypted_data": "35db2f10e244a19686cf929071a80ac7029ad03cff2b7aebff4bac148c7dd32f64cf96c0b4122eb61f4ced1bba6672c1"
 }
-
+```
