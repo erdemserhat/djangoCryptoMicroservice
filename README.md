@@ -52,7 +52,7 @@ This endpoint handles encryption requests by processing sensitive data, user UUI
 
 
 **Example Respond:**
-```json
+
 {
     "encrypted_data": "35db2f10e244a19686cf929071a80ac7029ad03cff2b7aebff4bac148c7dd32f64cf96c0b4122eb61f4ced1bba6672c1"
 }
