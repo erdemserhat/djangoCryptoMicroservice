@@ -23,3 +23,30 @@ This project aims to provide a more secure and effortless approach to encrypting
 ## Security and Performance
 - **Security**: Communication between the main server and the encryption server is secured using secure protocols. The independent encryption server adds an extra layer of security against attacks.
 - **Performance**: The performance of the encryption server can affect the overall speed and efficiency of the system. Therefore, it is crucial to ensure that the encryption server has sufficient performance and scalability.
+
+## Endpoints
+
+### `/encrypt`
+
+**Method:** `POST`
+
+**Description:**
+This endpoint handles encryption requests by processing sensitive data, user UUID, and an API key. It uses the provided UUID to determine the encryption and salt methods from predefined pools and returns the encrypted data as a response.
+
+**Request Body:**
+- `apiKey`: The API key for authentication.
+- `userUUID`: The unique identifier for the user.
+- `sensitiveData`: The data that needs to be encrypted.
+
+**Response:**
+- On success: Returns the encrypted data.
+- On failure: Returns an error message if the request is not a POST request or if there is an issue with the encryption process.
+
+**Example Request:**
+```json
+{
+  "apiKey": "your_api_key",
+  "userUUID": "123e4567-e89b-12d3-a456-426614174000",
+  "sensitiveData": "this is some sensitive data"
+}
+
