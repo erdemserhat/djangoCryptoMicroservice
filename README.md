@@ -1,6 +1,12 @@
 # CaaS ( Crypto as a Service )
 
 ## Project Overview
+High Level Security with CaaS (Cryptography as a Service)
+
+In my newly developed CaaS project, I took an innovative approach to encrypting users' sensitive data. Instead of using a single type of salt and encryption algorithm in traditional methods, we use unique salt and encryption algorithms based on UUID for each user. In this way, each data in the database is encrypted by separate salt values and separate encryption algorithms.
+Encryption is carried out in a separate microservice and the principles of "Separation of Concerns" (SoC) and "Single Source of Truth" (SSOT) are adopted. In this way, the main server can focus more on business logic and provides convenience for developers. The hashing mechanism, which is performed repeatedly, runs on the machine where the main server is located, but on a separate port as a different server, with high level security.
+
+Using a single salt value and a single encryption algorithm for servers reduces randomness. It is possible to detect this algorithm and its salt values through reverse engineering studies (e.g. Cache miss attack). This creates a disadvantage in case the database falls into the hands of attackers. This is another aspect where this project offers a solution. Even if the database is compromised by attackers, randomness is at its highest since each row is encrypted by a separate salt and encryption algorithm.
 This project aims to provide a more secure and effortless approach to encrypting user data compared to traditional methods. Encryption operations are carried out on a separate server, independent of the main server, and unique encryption configurations are created for each user.
 
 ## Presentation Video
