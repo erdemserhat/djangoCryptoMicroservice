@@ -3,10 +3,7 @@ import uuid
 
 
 class EncryptionConfiguration:
-    def __init__(
-            self, uuid_value: str,
-            cipher_pool_size: int,
-            salt_pool_size: int):
+    def __init__(self, uuid_value: str,cipher_pool_size: int,salt_pool_size: int):
         self.cipher_pool_size = cipher_pool_size
         self.uuid_value = uuid_value
         self.salt_pool_size = salt_pool_size
@@ -41,17 +38,16 @@ class EncryptionConfiguration:
             uuid_product += product
 
         # Step 3: Normalize the product by dividing it by the sum of the natural numbers up to the length of the UUID
-        normalized_uuid_product = uuid_product / (uuid_length * (uuid_length + 1) / 2)
+        normalized_uuid_product = uuid_product / ((uuid_length * (uuid_length + 1) / 2) + 1)
 
         # Step 4: Use the normalized UUID product as the seed for the random number generator
         random.seed(normalized_uuid_product)
 
         # Step 5: Generate a random integer within the specified range [0, limit)
-        return random.randint(0, limit-1)
+        return random.randint(0, limit - 1)
 
     def getSaltIndex(self) -> int:
         return self.__generate_unique_index(self.salt_pool_size)
 
     def getCipherIndex(self) -> int:
         return self.__generate_unique_index(self.cipher_pool_size)
-
