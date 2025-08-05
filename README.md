@@ -1,14 +1,141 @@
-# CaaS ( Crypto as a Service )
+# 🔐 CaaS (Crypto as a Service)
 
-## Project Overview
+<div align="center">
+  <img src="https://img.shields.io/badge/CaaS-Crypto%20as%20a%20Service-blue?style=for-the-badge&logo=lock" alt="CaaS Crypto Service" />
+  <br/>
+  <h1>🔐 CaaS - Advanced Encryption Microservice</h1>
+  <p><em>Revolutionary UUID-based encryption with unique salt and algorithm per user</em></p>
+</div>
 
-I took an innovative approach to encrypting users' sensitive data. Instead of using a single type of salt and encryption algorithm in traditional methods, we use unique salt and encryption algorithms based on UUID for each user. In this way, each data in the database is encrypted by separate salt values and separate encryption algorithms.
-Encryption is carried out in a separate microservice and the principles of "Separation of Concerns" (SoC) and "Single Source of Truth" (SSOT) are adopted. In this way, the main server can focus more on business logic and provides convenience for developers. The hashing mechanism, which is performed repeatedly, runs on the machine where the main server is located, but on a separate port as a different server, with high level security.
+<div align="center">
 
-Using a single salt value and a single encryption algorithm for servers reduces randomness. It is possible to detect this algorithm and its salt values through reverse engineering studies (e.g. Cache miss attack). This creates a disadvantage in case the database falls into the hands of attackers. This is another aspect where this project offers a solution. Even if the database is compromised by attackers, randomness is at its highest since each row is encrypted by a separate salt and encryption algorithm.
-This project aims to provide a more secure and effortless approach to encrypting user data compared to traditional methods. Encryption operations are carried out on a separate server, independent of the main server, and unique encryption configurations are created for each user.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square&logo=python)](https://python.org/)
+[![Django](https://img.shields.io/badge/Django-4.0+-green?style=flat-square&logo=django)](https://djangoproject.com/)
+[![Microservice](https://img.shields.io/badge/Architecture-Microservice-orange?style=flat-square)](https://microservices.io/)
+[![Security](https://img.shields.io/badge/Security-Enterprise%20Grade-red?style=flat-square&logo=shield)](https://owasp.org/)
+[![Encryption](https://img.shields.io/badge/Encryption-UUID%20Based-purple?style=flat-square)](https://en.wikipedia.org/wiki/Encryption)
 
-## Presentation Video
+</div>
+
+---
+
+## 🎯 Project Overview
+
+CaaS represents a **revolutionary approach** to user data encryption, breaking away from traditional single-salt, single-algorithm methods. Our innovative system uses **unique salt values and encryption algorithms** based on each user's UUID, ensuring maximum security and randomness.
+
+### 🚀 **Innovation Highlights**
+
+- **🔐 Unique Encryption per User**: Each user gets their own salt and encryption algorithm
+- **🆔 UUID-Based Configuration**: Deterministic yet unique encryption based on UUID
+- **🏗️ Microservice Architecture**: Independent encryption server for separation of concerns
+- **🛡️ Maximum Security**: Even if database is compromised, each row uses different encryption
+
+---
+
+## 🏗️ Architecture Overview
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Architecture-Microservice%20Design-blue?style=for-the-badge" alt="Microservice Architecture" />
+  <img src="https://img.shields.io/badge/Security-UUID%20Based%20Encryption-green?style=for-the-badge" alt="UUID Encryption" />
+  <img src="https://img.shields.io/badge/Pattern-Separation%20of%20Concerns-purple?style=for-the-badge" alt="SoC Pattern" />
+</div>
+
+### 🎯 **Core Principles**
+
+<table>
+  <tr>
+    <td align="center" width="250">
+      <b>🔐 Unique Encryption</b><br/>
+      <small>Different salt and algorithm per user</small>
+    </td>
+    <td align="center" width="250">
+      <b>🆔 UUID-Based</b><br/>
+      <small>Deterministic configuration from UUID</small>
+    </td>
+    <td align="center" width="250">
+      <b>🏗️ Microservice</b><br/>
+      <small>Independent encryption server</small>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="250">
+      <b>🛡️ Maximum Security</b><br/>
+      <small>Even compromised DB remains secure</small>
+    </td>
+    <td align="center" width="250">
+      <b>⚡ High Performance</b><br/>
+      <small>Optimized encryption operations</small>
+    </td>
+    <td align="center" width="250">
+      <b>🔧 Easy Integration</b><br/>
+      <small>Simple API for developers</small>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🏛️ System Architecture
+
+<div align="center">
+  <h3>🔐 CaaS Encryption Flow</h3>
+</div>
+
+```
+🔐 CaaS ENCRYPTION ARCHITECTURE TREE
+├── 🏢 MAIN SERVER (Business Logic)
+│   ├── 📡 API Gateway
+│   │   ├── Request Validation
+│   │   ├── Authentication
+│   │   └── Rate Limiting
+│   ├── 💼 Business Services
+│   │   ├── User Management
+│   │   ├── Data Processing
+│   │   └── Business Logic
+│   └── 🗄️ Database Layer
+│       ├── User Data
+│       ├── Encrypted Data
+│       └── Configuration
+│
+├── 🔐 ENCRYPTION MICROSERVICE
+│   ├── 🎲 Cipher Pool
+│   │   ├── blake2b
+│   │   ├── sha256
+│   │   ├── md5
+│   │   └── (various algorithms)
+│   ├── 🧂 Salt Pool
+│   │   ├── 8 characters
+│   │   ├── 16 characters
+│   │   ├── 32 characters
+│   │   └── 64 characters
+│   ├── 🆔 UUID Processor
+│   │   ├── UUID Parsing
+│   │   ├── Algorithm Selection
+│   │   └── Salt Selection
+│   └── 🔒 Encryption Engine
+│       ├── Data Encryption
+│       ├── Hash Generation
+│       └── Response Formatting
+│
+└── 🔗 COMMUNICATION LAYER
+    ├── 🔐 Secure Protocols
+    │   ├── HTTPS/TLS
+    │   ├── API Authentication
+    │   └── Request Validation
+    └── 📡 API Endpoints
+        ├── POST /encrypt
+        ├── POST /decrypt
+        └── GET /health
+
+🔄 ENCRYPTION FLOW:
+User Data → Main Server → Encryption Service → Encrypted Data → Database
+     ↓              ↓              ↓              ↓              ↓
+Validation    UUID Processing   Algorithm    Secure Storage   Retrieval
+```
+
+---
+
+## 🎬 Presentation Video
 
 https://github.com/erdemserhat/djangoCryptoMicroservice/assets/116950260/452801ed-40e6-44d2-82c1-787e2ed32a76
 
